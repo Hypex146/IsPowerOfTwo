@@ -12,9 +12,9 @@
 	
 	1.3 Выполнить команды:
 	
-		1.3.1 "cmake CMakeLists.txt"
+		cmake CMakeLists.txt
 		
-		1.3.2 "make"
+		make
 		
 	1.4 Запустить исполняемый файл "./run"
 	
@@ -28,9 +28,9 @@
 	
 	2.4 Выполнить команды:
 	
-		2.4.1 "cmake CMakeLists.txt -DTESTS=ON"
+		cmake CMakeLists.txt -DTESTS=ON
 		
-		2.4.2 "make"
+		make
 		
 	2.5 Запустить исполняемый файл "./run"
 	
