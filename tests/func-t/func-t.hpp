@@ -6,6 +6,9 @@
 #include "func.hpp"
 
 
+using namespace ipot;
+
+
 TEST(IPOTA, INT8_T) {
 	EXPECT_EQ(isPowerOfTwoA<int8_t>(0), false);
 	for (int i = 0; i < sizeof(int8_t) * 8 - 1; i++) {

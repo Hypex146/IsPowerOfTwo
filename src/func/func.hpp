@@ -1,17 +1,21 @@
 #pragma once
 
 
-bool isPowerOfTwoA(std::integral auto a);
+namespace ipot {
 
-bool isPowerOfTwoB(std::integral auto a);
+	bool isPowerOfTwoA(std::integral auto number);
 
-bool isPowerOfTwoC(std::integral auto a);
+	bool isPowerOfTwoB(std::integral auto number);
 
-int powerOfTwoA(std::integral auto a);
+	bool isPowerOfTwoC(std::integral auto number);
 
-int powerOfTwoB(std::integral auto a);
+	int powerOfTwoA(std::integral auto number);
 
-int powerOfTwoC(std::integral auto a);
+	int powerOfTwoB(std::integral auto number);
+
+	int powerOfTwoC(std::integral auto number);
+
+}
 
 
 #include "func.tpp"

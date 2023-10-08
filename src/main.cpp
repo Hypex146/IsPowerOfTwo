@@ -2,6 +2,9 @@
 #include "func.hpp"
 
 
+using namespace ipot;
+
+
 int main(int argc, char *argv[]) {
 	if (argc != 2) {
 		std::cout << "An argument is needed" << std::endl;

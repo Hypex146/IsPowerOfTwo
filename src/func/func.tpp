@@ -5,30 +5,30 @@
 #define N 100
 
 
-bool isPowerOfTwoA(std::integral auto a) {
-	return (a > 0) && !(a & (a - 1));
+bool ipot::isPowerOfTwoA(std::integral auto number) {
+	return (number > 0) && !(number & (number - 1));
 }
 
 
-bool isPowerOfTwoB(std::integral auto a) {
-	return (a > 0) && ((a & -a) == a);
+bool ipot::isPowerOfTwoB(std::integral auto number) {
+	return (number > 0) && ((number & -number) == number);
 }
 
 
-bool isPowerOfTwoC(std::integral auto a) {
-	double lg = log2(a);
-	if (lg == (int) lg) {
+bool ipot::isPowerOfTwoC(std::integral auto number) {
+	double power = log2(number);
+	if (power == (int) power) {
 		return true;
 	}
 	return false;
 }
 
 
-int powerOfTwoA(std::integral auto a) {
-	uint64_t current_number = 0;
-	for (int power = 0; current_number <= a && power <= N; power++) {
-		current_number = pow(2, power);
-		if (current_number == a) {
+int ipot::powerOfTwoA(std::integral auto number) {
+	uint64_t iterated_number = 0;
+	for (int power = 0; iterated_number <= number && power <= N; power++) {
+		iterated_number = pow(2, power);
+		if (iterated_number == number) {
 			return power;
 		}
 	}
@@ -36,28 +36,28 @@ int powerOfTwoA(std::integral auto a) {
 }
 
 
-int powerOfTwoB(std::integral auto a) {
+int ipot::powerOfTwoB(std::integral auto number) {
 	int power = 0;
-	double tmp = a;
-	while (tmp > 1 && power < N) {
-		if (tmp / 2 == (uint64_t) tmp / 2) {
-			tmp = (uint64_t) tmp / 2;
+	double div_number = number;
+	while (div_number > 1 && power < N) {
+		if (div_number / 2 == (uint64_t) div_number / 2) {
+			div_number = (uint64_t) div_number / 2;
 			power++;
 		} else {
 			return -1;
 		}
 	}
-	if (tmp == 1) {
+	if (div_number == 1) {
 		return power;
 	}
 	return -1;
 }
 
 
-int powerOfTwoC(std::integral auto a) {
-	double lg = log2(a);
-	if (lg == (int) lg && lg <= N) {
-		return lg;
+int ipot::powerOfTwoC(std::integral auto number) {
+	double power = log2(number);
+	if (power == (int) power && power <= N) {
+		return power;
 	}
 	return -1;
 }
