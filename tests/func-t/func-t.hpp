@@ -6,12 +6,15 @@
 #include "func.hpp"
 
 
+#define BITS_IN_BYTE 8
+
+
 using namespace ipot;
 
 
 TEST(IPOTA, INT8_T) {
 	EXPECT_EQ(isPowerOfTwoA<int8_t>(0), false);
-	for (int i = 0; i < sizeof(int8_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int8_t) * BITS_IN_BYTE - 1; i++) {
 		int8_t num = ((int8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(isPowerOfTwoA<int8_t>(num), true);
@@ -19,7 +22,7 @@ TEST(IPOTA, INT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int8_t power = (std::rand() % (sizeof(int8_t) * 8 - 2)) + 1;
+		int8_t power = (std::rand() % (sizeof(int8_t) * BITS_IN_BYTE - 2)) + 1;
 		int8_t num = ((int8_t) 1) << power;
 		int8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -30,7 +33,7 @@ TEST(IPOTA, INT8_T) {
 
 TEST(IPOTA, UINT8_T) {
 	EXPECT_EQ(isPowerOfTwoA<uint8_t>(0), false);
-	for (int i = 0; i < sizeof(uint8_t) * 8; i++) {
+	for (int i = 0; i < sizeof(uint8_t) * BITS_IN_BYTE; i++) {
 		uint8_t num = ((uint8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(isPowerOfTwoA<uint8_t>(num), true);
@@ -38,7 +41,7 @@ TEST(IPOTA, UINT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint8_t power = (std::rand() % (sizeof(uint8_t) * 8 - 1)) + 1;
+		uint8_t power = (std::rand() % (sizeof(uint8_t) * BITS_IN_BYTE - 1)) + 1;
 		uint8_t num = ((uint8_t) 1) << power;
 		uint8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -49,7 +52,7 @@ TEST(IPOTA, UINT8_T) {
 
 TEST(IPOTA, INT64_T) {
 	EXPECT_EQ(isPowerOfTwoA<int64_t>(0), false);
-	for (int i = 0; i < sizeof(int64_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int64_t) * BITS_IN_BYTE - 1; i++) {
 		int64_t num = ((int64_t) 1) << i;
 		//std::cout << i << " : " << num << std::endl;
 		EXPECT_EQ(isPowerOfTwoA<int64_t>((int64_t)num), true);
@@ -57,7 +60,7 @@ TEST(IPOTA, INT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int64_t power = (std::rand() % (sizeof(int64_t) * 8 - 2)) + 1;
+		int64_t power = (std::rand() % (sizeof(int64_t) * BITS_IN_BYTE - 2)) + 1;
 		int64_t num = ((int64_t) 1) << power;
 		int64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -68,7 +71,7 @@ TEST(IPOTA, INT64_T) {
 
 TEST(IPOTA, UINT64_T) {
 	EXPECT_EQ(isPowerOfTwoA<uint64_t>(0), false);
-	for (int i = 0; i < sizeof(uint64_t) * 8; i++) {
+	for (int i = 0; i < sizeof(uint64_t) * BITS_IN_BYTE; i++) {
 		uint64_t num = ((uint64_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(isPowerOfTwoA<uint64_t>(num), true);
@@ -76,7 +79,7 @@ TEST(IPOTA, UINT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint64_t power = (std::rand() % (sizeof(uint64_t) * 8 - 1)) + 1;
+		uint64_t power = (std::rand() % (sizeof(uint64_t) * BITS_IN_BYTE - 1)) + 1;
 		uint64_t num = ((uint64_t) 1) << power;
 		uint64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -87,7 +90,7 @@ TEST(IPOTA, UINT64_T) {
 
 TEST(IPOTB, INT8_T) {
 	EXPECT_EQ(isPowerOfTwoB<int8_t>(0), false);
-	for (int i = 0; i < sizeof(int8_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int8_t) * BITS_IN_BYTE - 1; i++) {
 		int8_t num = ((int8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(isPowerOfTwoB<int8_t>(num), true);
@@ -95,7 +98,7 @@ TEST(IPOTB, INT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int8_t power = (std::rand() % (sizeof(int8_t) * 8 - 2)) + 1;
+		int8_t power = (std::rand() % (sizeof(int8_t) * BITS_IN_BYTE - 2)) + 1;
 		int8_t num = ((int8_t) 1) << power;
 		int8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -106,7 +109,7 @@ TEST(IPOTB, INT8_T) {
 
 TEST(IPOTB, UINT8_T) {
 	EXPECT_EQ(isPowerOfTwoB<uint8_t>(0), false);
-	for (int i = 0; i < sizeof(uint8_t) * 8; i++) {
+	for (int i = 0; i < sizeof(uint8_t) * BITS_IN_BYTE; i++) {
 		uint8_t num = ((uint8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(isPowerOfTwoB<uint8_t>(num), true);
@@ -114,7 +117,7 @@ TEST(IPOTB, UINT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint8_t power = (std::rand() % (sizeof(uint8_t) * 8 - 1)) + 1;
+		uint8_t power = (std::rand() % (sizeof(uint8_t) * BITS_IN_BYTE - 1)) + 1;
 		uint8_t num = ((uint8_t) 1) << power;
 		uint8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -125,7 +128,7 @@ TEST(IPOTB, UINT8_T) {
 
 TEST(IPOTB, INT64_T) {
 	EXPECT_EQ(isPowerOfTwoB<int64_t>(0), false);
-	for (int i = 0; i < sizeof(int64_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int64_t) * BITS_IN_BYTE - 1; i++) {
 		int64_t num = ((int64_t) 1) << i;
 		//std::cout << i << " : " << num << std::endl;
 		EXPECT_EQ(isPowerOfTwoB<int64_t>((int64_t)num), true);
@@ -133,7 +136,7 @@ TEST(IPOTB, INT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int64_t power = (std::rand() % (sizeof(int64_t) * 8 - 2)) + 1;
+		int64_t power = (std::rand() % (sizeof(int64_t) * BITS_IN_BYTE - 2)) + 1;
 		int64_t num = ((int64_t) 1) << power;
 		int64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -144,7 +147,7 @@ TEST(IPOTB, INT64_T) {
 
 TEST(IPOTB, UINT64_T) {
 	EXPECT_EQ(isPowerOfTwoB<uint64_t>(0), false);
-	for (int i = 0; i < sizeof(uint64_t) * 8; i++) {
+	for (int i = 0; i < sizeof(uint64_t) * BITS_IN_BYTE; i++) {
 		uint64_t num = ((uint64_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(isPowerOfTwoB<uint64_t>(num), true);
@@ -152,7 +155,7 @@ TEST(IPOTB, UINT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint64_t power = (std::rand() % (sizeof(uint64_t) * 8 - 1)) + 1;
+		uint64_t power = (std::rand() % (sizeof(uint64_t) * BITS_IN_BYTE - 1)) + 1;
 		uint64_t num = ((uint64_t) 1) << power;
 		uint64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -163,7 +166,7 @@ TEST(IPOTB, UINT64_T) {
 
 TEST(IPOTC, INT8_T) {
 	EXPECT_EQ(isPowerOfTwoC<int8_t>(0), false);
-	for (int i = 0; i < sizeof(int8_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int8_t) * BITS_IN_BYTE - 1; i++) {
 		int8_t num = ((int8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(isPowerOfTwoC<int8_t>(num), true);
@@ -171,7 +174,7 @@ TEST(IPOTC, INT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int8_t power = (std::rand() % (sizeof(int8_t) * 8 - 2)) + 1;
+		int8_t power = (std::rand() % (sizeof(int8_t) * BITS_IN_BYTE - 2)) + 1;
 		int8_t num = ((int8_t) 1) << power;
 		int8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -182,7 +185,7 @@ TEST(IPOTC, INT8_T) {
 
 TEST(IPOTC, UINT8_T) {
 	EXPECT_EQ(isPowerOfTwoC<uint8_t>(0), false);
-	for (int i = 0; i < sizeof(uint8_t) * 8; i++) {
+	for (int i = 0; i < sizeof(uint8_t) * BITS_IN_BYTE; i++) {
 		uint8_t num = ((uint8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(isPowerOfTwoC<uint8_t>(num), true);
@@ -190,7 +193,7 @@ TEST(IPOTC, UINT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint8_t power = (std::rand() % (sizeof(uint8_t) * 8 - 1)) + 1;
+		uint8_t power = (std::rand() % (sizeof(uint8_t) * BITS_IN_BYTE - 1)) + 1;
 		uint8_t num = ((uint8_t) 1) << power;
 		uint8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -201,7 +204,7 @@ TEST(IPOTC, UINT8_T) {
 
 TEST(IPOTC, INT64_T) {
 	EXPECT_EQ(isPowerOfTwoC<int64_t>(0), false);
-	for (int i = 0; i < sizeof(int64_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int64_t) * BITS_IN_BYTE - 1; i++) {
 		int64_t num = ((int64_t) 1) << i;
 		//std::cout << i << " : " << num << std::endl;
 		EXPECT_EQ(isPowerOfTwoC<int64_t>((int64_t)num), true);
@@ -209,7 +212,7 @@ TEST(IPOTC, INT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int64_t power = (std::rand() % (sizeof(int64_t) * 8 - 2)) + 1;
+		int64_t power = (std::rand() % (sizeof(int64_t) * BITS_IN_BYTE - 2)) + 1;
 		int64_t num = ((int64_t) 1) << power;
 		int64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -220,7 +223,7 @@ TEST(IPOTC, INT64_T) {
 
 TEST(IPOTC, UINT64_T) {
 	EXPECT_EQ(isPowerOfTwoC<uint64_t>(0), false);
-	for (int i = 0; i < sizeof(uint64_t) * 8; i++) {
+	for (int i = 0; i < sizeof(uint64_t) * BITS_IN_BYTE; i++) {
 		uint64_t num = ((uint64_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(isPowerOfTwoC<uint64_t>(num), true);
@@ -228,7 +231,7 @@ TEST(IPOTC, UINT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint64_t power = (std::rand() % (sizeof(uint64_t) * 8 - 1)) + 1;
+		uint64_t power = (std::rand() % (sizeof(uint64_t) * BITS_IN_BYTE - 1)) + 1;
 		uint64_t num = ((uint64_t) 1) << power;
 		uint64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -239,7 +242,7 @@ TEST(IPOTC, UINT64_T) {
 
 TEST(POTA, INT8_T) {
 	EXPECT_EQ(powerOfTwoA<int8_t>(0), -1);
-	for (int i = 0; i < sizeof(int8_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int8_t) * BITS_IN_BYTE - 1; i++) {
 		int8_t num = ((int8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(powerOfTwoA<int8_t>(num), i);
@@ -247,7 +250,7 @@ TEST(POTA, INT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int8_t power = (std::rand() % (sizeof(int8_t) * 8 - 2)) + 1;
+		int8_t power = (std::rand() % (sizeof(int8_t) * BITS_IN_BYTE - 2)) + 1;
 		int8_t num = ((int8_t) 1) << power;
 		int8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -258,7 +261,7 @@ TEST(POTA, INT8_T) {
 
 TEST(POTA, UINT8_T) {
 	EXPECT_EQ(powerOfTwoA<uint8_t>(0), -1);
-	for (int i = 0; i < sizeof(uint8_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(uint8_t) * BITS_IN_BYTE - 1; i++) {
 		uint8_t num = ((uint8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(powerOfTwoA<uint8_t>(num), i);
@@ -266,7 +269,7 @@ TEST(POTA, UINT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint8_t power = (std::rand() % (sizeof(uint8_t) * 8 - 2)) + 1;
+		uint8_t power = (std::rand() % (sizeof(uint8_t) * BITS_IN_BYTE - 2)) + 1;
 		uint8_t num = ((uint8_t) 1) << power;
 		uint8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -277,7 +280,7 @@ TEST(POTA, UINT8_T) {
 
 TEST(POTA, INT64_T) {
 	EXPECT_EQ(powerOfTwoA<int64_t>(0), -1);
-	for (int i = 0; i < sizeof(int64_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int64_t) * BITS_IN_BYTE - 1; i++) {
 		int64_t num = ((int64_t) 1) << i;
 		//std::cout << (int64_t) num << " : " << i << std::endl;
 		EXPECT_EQ(powerOfTwoA<int64_t>(num), i);
@@ -285,7 +288,7 @@ TEST(POTA, INT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int64_t power = (std::rand() % (sizeof(int64_t) * 8 - 2)) + 1;
+		int64_t power = (std::rand() % (sizeof(int64_t) * BITS_IN_BYTE - 2)) + 1;
 		int64_t num = ((int64_t) 1) << power;
 		int64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -296,7 +299,7 @@ TEST(POTA, INT64_T) {
 
 TEST(POTA, UINT64_T) {
 	EXPECT_EQ(powerOfTwoA<uint64_t>(0), -1);
-	for (int i = 0; i < sizeof(uint64_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(uint64_t) * BITS_IN_BYTE - 1; i++) {
 		uint64_t num = ((uint64_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(powerOfTwoA<uint64_t>(num), i);
@@ -304,7 +307,7 @@ TEST(POTA, UINT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint64_t power = (std::rand() % (sizeof(uint64_t) * 8 - 2)) + 1;
+		uint64_t power = (std::rand() % (sizeof(uint64_t) * BITS_IN_BYTE - 2)) + 1;
 		uint64_t num = ((uint64_t) 1) << power;
 		uint64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -315,7 +318,7 @@ TEST(POTA, UINT64_T) {
 
 TEST(POTB, INT8_T) {
 	EXPECT_EQ(powerOfTwoB<int8_t>(0), -1);
-	for (int i = 0; i < sizeof(int8_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int8_t) * BITS_IN_BYTE - 1; i++) {
 		int8_t num = ((int8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(powerOfTwoB<int8_t>(num), i);
@@ -323,7 +326,7 @@ TEST(POTB, INT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int8_t power = (std::rand() % (sizeof(int8_t) * 8 - 2)) + 1;
+		int8_t power = (std::rand() % (sizeof(int8_t) * BITS_IN_BYTE - 2)) + 1;
 		int8_t num = ((int8_t) 1) << power;
 		int8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -334,7 +337,7 @@ TEST(POTB, INT8_T) {
 
 TEST(POTB, UINT8_T) {
 	EXPECT_EQ(powerOfTwoB<uint8_t>(0), -1);
-	for (int i = 0; i < sizeof(uint8_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(uint8_t) * BITS_IN_BYTE - 1; i++) {
 		uint8_t num = ((uint8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(powerOfTwoB<uint8_t>(num), i);
@@ -342,7 +345,7 @@ TEST(POTB, UINT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint8_t power = (std::rand() % (sizeof(uint8_t) * 8 - 2)) + 1;
+		uint8_t power = (std::rand() % (sizeof(uint8_t) * BITS_IN_BYTE - 2)) + 1;
 		uint8_t num = ((uint8_t) 1) << power;
 		uint8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -353,7 +356,7 @@ TEST(POTB, UINT8_T) {
 
 TEST(POTB, INT64_T) {
 	EXPECT_EQ(powerOfTwoB<int64_t>(0), -1);
-	for (int i = 0; i < sizeof(int64_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int64_t) * BITS_IN_BYTE - 1; i++) {
 		int64_t num = ((int64_t) 1) << i;
 		//std::cout << (int64_t) num << " : " << i << std::endl;
 		EXPECT_EQ(powerOfTwoB<int64_t>(num), i);
@@ -361,7 +364,7 @@ TEST(POTB, INT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int64_t power = (std::rand() % (sizeof(int64_t) * 8 - 2)) + 1;
+		int64_t power = (std::rand() % (sizeof(int64_t) * BITS_IN_BYTE - 2)) + 1;
 		int64_t num = ((int64_t) 1) << power;
 		int64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -372,7 +375,7 @@ TEST(POTB, INT64_T) {
 
 TEST(POTB, UINT64_T) {
 	EXPECT_EQ(powerOfTwoB<uint64_t>(0), -1);
-	for (int i = 0; i < sizeof(uint64_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(uint64_t) * BITS_IN_BYTE - 1; i++) {
 		uint64_t num = ((uint64_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(powerOfTwoB<uint64_t>(num), i);
@@ -380,7 +383,7 @@ TEST(POTB, UINT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint64_t power = (std::rand() % (sizeof(uint64_t) * 8 - 2)) + 1;
+		uint64_t power = (std::rand() % (sizeof(uint64_t) * BITS_IN_BYTE - 2)) + 1;
 		uint64_t num = ((uint64_t) 1) << power;
 		uint64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -391,7 +394,7 @@ TEST(POTB, UINT64_T) {
 
 TEST(POTC, INT8_T) {
 	EXPECT_EQ(powerOfTwoC<int8_t>(0), -1);
-	for (int i = 0; i < sizeof(int8_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int8_t) * BITS_IN_BYTE - 1; i++) {
 		int8_t num = ((int8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(powerOfTwoC<int8_t>(num), i);
@@ -399,7 +402,7 @@ TEST(POTC, INT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int8_t power = (std::rand() % (sizeof(int8_t) * 8 - 2)) + 1;
+		int8_t power = (std::rand() % (sizeof(int8_t) * BITS_IN_BYTE - 2)) + 1;
 		int8_t num = ((int8_t) 1) << power;
 		int8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -410,7 +413,7 @@ TEST(POTC, INT8_T) {
 
 TEST(POTC, UINT8_T) {
 	EXPECT_EQ(powerOfTwoC<uint8_t>(0), -1);
-	for (int i = 0; i < sizeof(uint8_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(uint8_t) * BITS_IN_BYTE - 1; i++) {
 		uint8_t num = ((uint8_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(powerOfTwoC<uint8_t>(num), i);
@@ -418,7 +421,7 @@ TEST(POTC, UINT8_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint8_t power = (std::rand() % (sizeof(uint8_t) * 8 - 2)) + 1;
+		uint8_t power = (std::rand() % (sizeof(uint8_t) * BITS_IN_BYTE - 2)) + 1;
 		uint8_t num = ((uint8_t) 1) << power;
 		uint8_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -429,7 +432,7 @@ TEST(POTC, UINT8_T) {
 
 TEST(POTC, INT64_T) {
 	EXPECT_EQ(powerOfTwoC<int64_t>(0), -1);
-	for (int i = 0; i < sizeof(int64_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(int64_t) * BITS_IN_BYTE - 1; i++) {
 		int64_t num = ((int64_t) 1) << i;
 		//std::cout << (int64_t) num << " : " << i << std::endl;
 		EXPECT_EQ(powerOfTwoC<int64_t>(num), i);
@@ -437,7 +440,7 @@ TEST(POTC, INT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		int64_t power = (std::rand() % (sizeof(int64_t) * 8 - 2)) + 1;
+		int64_t power = (std::rand() % (sizeof(int64_t) * BITS_IN_BYTE - 2)) + 1;
 		int64_t num = ((int64_t) 1) << power;
 		int64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
@@ -448,7 +451,7 @@ TEST(POTC, INT64_T) {
 
 TEST(POTC, UINT64_T) {
 	EXPECT_EQ(powerOfTwoC<uint64_t>(0), -1);
-	for (int i = 0; i < sizeof(uint64_t) * 8 - 1; i++) {
+	for (int i = 0; i < sizeof(uint64_t) * BITS_IN_BYTE - 1; i++) {
 		uint64_t num = ((uint64_t) 1) << i;
 		//std::cout << (int) num << std::endl;
 		EXPECT_EQ(powerOfTwoC<uint64_t>(num), i);
@@ -456,7 +459,7 @@ TEST(POTC, UINT64_T) {
 	srand(time(NULL));
 	int iter_c = 1000;
 	for (int i = 0; i < iter_c; i++) {
-		uint64_t power = (std::rand() % (sizeof(uint64_t) * 8 - 2)) + 1;
+		uint64_t power = (std::rand() % (sizeof(uint64_t) * BITS_IN_BYTE - 2)) + 1;
 		uint64_t num = ((uint64_t) 1) << power;
 		uint64_t addition = (std::rand() % (num - 1)) + 1;
 		//std::cout << (int) num + addition << std::endl;
